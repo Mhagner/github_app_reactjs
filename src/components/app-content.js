@@ -13,7 +13,9 @@ const AppContent = ({
     starred,
 
 }) => (
-        <div style={{ paddingLeft: '20px' }} className='tab-container'>
+        <div style={{
+            paddingLeft: '20px',         
+        }} className='tab-container'>
             <Search handleSearch={handleSearch} />
 
             {!!userinfo && <UserInfo userinfo={userinfo} />}
