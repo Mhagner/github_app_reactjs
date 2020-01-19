@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Button = ({ name, type, getRepos }) => (
+const Button = ({ name, type, handleAction }) => (
     <div>
-        <a onClick={getRepos} type='button' className={`btn ${type} outline rounded`} href="#!">
+        <a 
+            onClick={handleAction} 
+            type='button' 
+            className={`btn ${type} outline rounded`} 
+            href="#!">
             {name}
         </a>
     </div>

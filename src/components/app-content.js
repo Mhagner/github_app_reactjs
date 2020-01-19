@@ -11,8 +11,8 @@ const AppContent = ({
     getStarred,
     repos,
     starred,
-    isFetching
-
+    isFetching,
+    handleClear
 }) => (
         <div style={{ paddingLeft: '20px', }} className='tab-container'>
 
@@ -22,8 +22,13 @@ const AppContent = ({
 
             {!!userinfo && <UserInfo userinfo={userinfo} />}
 
-            {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
-            
+            {!!userinfo &&
+                <Actions
+                    getRepos={getRepos}
+                    getStarred={getStarred}
+                    handleClear={handleClear}
+                />}
+
             {!!repos.length &&
                 <Repos
                     repos={repos}

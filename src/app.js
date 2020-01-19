@@ -11,10 +11,11 @@ export default class App extends Component {
             userinfo: null,
             repos: [],
             starred: [],
-            isFetching: false
+            isFetching: false,
         }
 
         this.handleSearch = this.handleSearch.bind(this)
+        this.handleClear = this.handleClear.bind(this)
     }
 
     getGitHubApiUrl(username, type) {
@@ -38,6 +39,10 @@ export default class App extends Component {
                 })
         }
 
+    }
+
+    handleClear() {
+        this.setState({ repos: [], starred: [] })
     }
 
     handleSearch(e) {
@@ -69,9 +74,10 @@ export default class App extends Component {
 
     render() {
         return (
-            <AppContent 
+            <AppContent
                 {...this.state}
                 handleSearch={this.handleSearch}
+                handleClear={this.handleClear}
                 getRepos={this.getRepos('repos')}
                 getStarred={this.getRepos('starred')}
             />
